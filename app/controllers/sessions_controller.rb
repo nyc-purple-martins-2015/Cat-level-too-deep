@@ -15,8 +15,8 @@ class SessionsController < ApplicationController
       flash[:notice] = "Welcome back!"
       redirect_to root_path
     else
-      flash[:alert] = "Invalid username or password. Please try again."
-      render "sessions/new"
+      flash.now[:alert] = "Invalid username or password. Please try again."
+      render "questions/index"
     end
   end
 end
