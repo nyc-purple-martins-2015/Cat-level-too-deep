@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   resources :users, only: :create
+<<<<<<< a25fdd0a7590c24426c7420e970839b74aeb6177
   resources :tags, only: [:index, :show]
   resource :session,  only: [:new, :create, :destroy]
 
@@ -9,6 +10,9 @@ Rails.application.routes.draw do
   end
 
   root 'questions#index'
+=======
+  get 'register' => 'users#new', as: :register
+>>>>>>> mvp question index
 
   get 'register' => 'users#new', as: :register
   get 'logout' => 'sessions#destroy', as: :logout
@@ -16,6 +20,16 @@ Rails.application.routes.draw do
   post 'session_create' => 'sessions#create', as: :session_create
 
   get '/tags' => 'tags#index'
+<<<<<<< a25fdd0a7590c24426c7420e970839b74aeb6177
+=======
+  root 'questions#index'
+
+  resources :questions, only: [:index, :show, :new, :create] do
+    resources :answers, only: [:create]
+  end
+
+  resources :tags, only: [:index, :show]
+>>>>>>> mvp question index
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
