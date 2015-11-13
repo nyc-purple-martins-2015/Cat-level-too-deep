@@ -23,7 +23,16 @@ describe QuestionsController do
     end
   end
 
+ let(:question) { FactoryGirl.create(:question) }
 
-
-
+  context "#show" do
+    it "finds the correct question" do
+      get :show, id: question.id
+      expect(assigns(:question)).to eq(question)
+    end
+    it "renders the question page" do
+      get :show, id: question.id
+      expect(response).to render_template(:show, id: question.id)
+    end
+  end
 end
