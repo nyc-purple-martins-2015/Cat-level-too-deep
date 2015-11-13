@@ -1,1 +1,8 @@
+<main>
 <h1> <%= @question.query%> </h1>
+<ul>
+  <% @question.answers.each do |answer| %>
+    <li><%= answer.response %></li>
+    <% end %>
+  </ul>
+</main>
