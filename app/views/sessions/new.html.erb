@@ -1,0 +1,11 @@
+<h1>Log In</h1>
+
+<%= form_for @user, url: session_create_path do |f| %>
+  <%= f.label :username %>
+  <%= f.text_field :username %><br/>
+
+  <%= f.label :password %>
+  <%= f.password_field :password %><br/>
+
+  <%= f.submit "Log In"%>
+<% end %>
