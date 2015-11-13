@@ -1,3 +1,7 @@
+<% if flash[:alert] %>
+  <%= flash[:alert] %>
+<% end %>
+
 <h1>Register</h1>
 
 <%= form_for @user do |f| %>
