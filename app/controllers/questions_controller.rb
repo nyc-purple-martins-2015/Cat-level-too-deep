@@ -10,7 +10,12 @@ class QuestionsController < ApplicationController
   end
 
   def show
-    render :show
+    @question=Question.find_by(id: params[:id])
+    if @question
+      render :show
+    else
+      # doesnt exist bad request erb
+    end
   end
 
   def create
