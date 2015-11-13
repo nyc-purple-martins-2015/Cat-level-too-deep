@@ -27,5 +27,11 @@ class QuestionsController < ApplicationController
   def question_params
     params.require(:question).permit(:title, :query, :best_answer_id, :user_id )
   end
+
+  private
+
+  def question_params
+    params.require(:question).permit(:title, :query, :user_id, :best_answer_id )
+  end
 end
 
