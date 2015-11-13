@@ -1,11 +1,9 @@
-<main>
-<h1> Cat Level Too Deep </h1>
-<ul>
-<% @questions.each do |question| %>
-  <li><class="question"><%= link_to question.query, question_path(question) %></li>
-  <% question.tags.each do |tag| %>
-    <p><%= link_to tag.category, tag_path(tag) %></p>
-</ul>
+<div>
+  <h1> Cat Level Too Deep </h1>
+  <h3>Questions</h3>
+  <ul>
+  <% @questions.each do |question| %>
+    <li> <%= render partial: "questions/condensed_question_show", locals: {question: question} %> </li>
   <% end %>
-<% end %>
-</main>
+  </ul>
+</div>

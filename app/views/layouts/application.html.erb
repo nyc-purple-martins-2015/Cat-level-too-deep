@@ -10,7 +10,7 @@
   <% if logged_in? %>
     <h1><%= link_to 'CatLevelTooDeep', root_path %></h1>
     <h1>Hi, <%= current_user.username %></h1>
-    <%= link_to "Logout", logout_path %>
+    <%= link_to "New Question", new_question_path %> | <%= link_to "Logout", logout_path %>
   <% else %>
     <h1><%= link_to 'CatLevelTooDeep', root_path %></h1>
     <%= link_to "Register", register_path %>

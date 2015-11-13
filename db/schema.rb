@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(version: 20151112214214) do
     t.integer  "user_id",        null: false
     t.string   "title",          null: false
     t.text     "query",          null: false
-    t.integer  "best_answer_id", null: false
+    t.integer  "best_answer_id"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
   end
