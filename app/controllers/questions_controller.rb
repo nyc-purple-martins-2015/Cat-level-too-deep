@@ -10,6 +10,7 @@ class QuestionsController < ApplicationController
   end
 
   def show
+    @answer = Answer.new
     @question=Question.find_by(id: params[:id])
     if @question
       render :show
