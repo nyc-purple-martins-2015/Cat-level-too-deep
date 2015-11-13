@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   resources :tags, only: [:index, :show]
   resource :session,  only: [:new, :create, :destroy]
 
+  resource :votes, only: [:create]
+
   resources :questions, only: [:index, :show, :new, :create] do
     resources :answers, only: [:create]
   end

@@ -5,5 +5,7 @@
     <li><%= answer.response %></li>
     <% end %>
   </ul>
+  <%= render partial: "questions/answer", locals: {question: @question, answer: @answer} %>
 </main>
+
 

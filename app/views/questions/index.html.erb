@@ -1,9 +1,15 @@
 <div>
-  <h1> Cat Level Too Deep </h1>
+  <br>
   <h3>Questions</h3>
-  <ul>
   <% @questions.each do |question| %>
-    <li> <%= render partial: "questions/condensed_question_show", locals: {question: question} %> </li>
+    <%if has_voted?(12)%>
+      <span class="vote_kitty_head"><%=image_tag "up_vote_cat.png"%></span>
+    <%else%>
+      <h4><span class=".vote"><%=render partial: "questions/question_votes", locals: {question: question} %> </span>
+      <span class="vote_kitty_head"><%=image_tag "neutral_vote_cat.png"%></span>
+    <%end%>
+
+
+      <%= render partial: "questions/condensed_question_show", locals: {question: question} %> </h4>
   <% end %>
-  </ul>
 </div>

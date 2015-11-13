@@ -10,6 +10,7 @@ class QuestionsController < ApplicationController
   end
 
   def show
+    @answer = Answer.new
     @question=Question.find_by(id: params[:id])
     if @question
       render :show
@@ -33,10 +34,5 @@ class QuestionsController < ApplicationController
     params.require(:question).permit(:title, :query, :best_answer_id, :user_id )
   end
 
-  private
-
-  def question_params
-    params.require(:question).permit(:title, :query, :best_answer_id, :user_id )
-  end
 end
 

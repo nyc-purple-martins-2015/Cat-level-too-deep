@@ -1,0 +1,8 @@
+
+  <div>
+    <%= button_to 'UpKitty!', votes_path, method: :post, data: [votable: question, up_vote: true] %>
+  </div>
+
+  <div>
+    <%= button_to 'DownKitty!', votes_path, method: :post, data: [votable: question, up_vote: false] %>
+  </div>
