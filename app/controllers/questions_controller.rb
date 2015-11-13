@@ -5,6 +5,7 @@ class QuestionsController < ApplicationController
   end
 
   def new
+    @question = Question.new
     render :new
   end
 
@@ -13,12 +14,18 @@ class QuestionsController < ApplicationController
   end
 
   def create
+    @question = Question.new(question_params)
+    if @question.save
+      redirect_to question_path(@question)
+    else
+      render :new
+    end
   end
 
   private
 
   def question_params
-    params.require(:question).permit(:title, :query, :user_id, :best_answer_id )
+    params.require(:question).permit(:title, :query, :best_answer_id, :user_id )
   end
 end
 
