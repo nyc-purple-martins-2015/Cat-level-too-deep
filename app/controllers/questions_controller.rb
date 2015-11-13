@@ -3,6 +3,10 @@ class QuestionsController < ApplicationController
     @questions = Question.includes(:tags)
   end
 
+  def index
+    @questions = Question.includes(:tags)
+  end
+
   def show
     @question = Question.find(params[:id])
   end
