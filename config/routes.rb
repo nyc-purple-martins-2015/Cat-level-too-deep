@@ -1,8 +1,5 @@
 Rails.application.routes.draw do
-  resources :tags, only: [:index, :show]
-  get '/tags' => 'tags#index'
-  root 'questions#index'
-  resources :questions
+
   resources :users, only: :create
   get 'register' => 'users#new', as: :register
 
@@ -10,6 +7,15 @@ Rails.application.routes.draw do
   get 'logout' => 'sessions#destroy', as: :logout
   get 'login' => 'sessions#new', as: :login
   post 'session_create' => 'sessions#create', as: :session_create
+
+  get '/tags' => 'tags#index'
+  root 'questions#index'
+
+  resources :questions, only: [:index, :show, :new, :create] do
+    resources :answers, only: [:create]
+  end
+
+  resources :tags, only: [:index, :show]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
