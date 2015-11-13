@@ -12,7 +12,7 @@
     <%= link_to "Logout", logout_path %>
   <% else %>
     <%= link_to "Register", register_path %>
-    <%= render partial: "_new_form", locals: {user: @user} %>
+    <%= render partial: "sessions/new_form", locals: {user: @user} %>
   <% end %>
 
 <%= yield %>
