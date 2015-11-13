@@ -12,3 +12,7 @@ q2.votes.create!(user: u)
 a= Answer.create!(user: u, question: q1, response: "an answer response")
 Vote.create(votable: q1, user:u, up_vote: true)
 
+Tag.create!(category: "Clawjure")
+Tag.create!(category: "Purrl")
+QuestionTag.create!( tag_id: 1, question_id: 2)
+QuestionTag.create!( tag_id: 2, question_id: 1)
