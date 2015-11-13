@@ -10,11 +10,16 @@ class QuestionsController < ApplicationController
   end
 
   def show
-    render :show
+    @question=Question.find_by(id: params[:id])
+    if @question
+      render :show
+    else
+      # doesnt exist bad request erb
+    end
   end
 
   def create
-    @question = Question.new(question_params)
+    @question = current_user.questions.new(question_params)
     if @question.save
       redirect_to question_path(@question)
     else
