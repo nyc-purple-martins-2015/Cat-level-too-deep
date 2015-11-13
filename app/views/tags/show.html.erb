@@ -1,0 +1,8 @@
+<main>
+<h1> Questions in <%= @tag.category %> </h1>
+<ul>
+<% @tag.questions.each do |question| %>
+  <li><class="query"><%= link_to question.query, tag_question_path(question, question.id) %></li>
+</ul>
+<% end %>
+</main>
