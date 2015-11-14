@@ -11,3 +11,7 @@
 .vote_kitty_head img{
   height: 4em;
 }
+
+.comments_form {
+  display: none;
+}

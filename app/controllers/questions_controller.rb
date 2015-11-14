@@ -1,5 +1,6 @@
 class QuestionsController < ApplicationController
   def index
+    @comment = Comment.new
     @questions = Question.all
     render :index
   end
@@ -10,6 +11,7 @@ class QuestionsController < ApplicationController
   end
 
   def show
+    @comment = Comment.new
     @answer = Answer.new
     @question=Question.find_by(id: params[:id])
     if @question
