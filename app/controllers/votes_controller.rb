@@ -6,7 +6,7 @@ class VotesController < ApplicationController
     elsif @vote.save && @vote.votable_type == "Answer"
       redirect_to question_path(id: Answer.find(@vote.votable_id).question.id)
     else
-      #add error message
+      flash.now[:notice] = "Response can't be blank."
       render :index
     end
   end
