@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 describe QuestionsController do
+
   context "#index" do
     it "assigns @questions to Question.all" do
       get :index
@@ -23,7 +24,26 @@ describe QuestionsController do
     end
   end
 
+ let(:question) { FactoryGirl.create(:question) }
 
+  context "#show" do
+    it "finds the correct question" do
+      get :show, id: question.id
+      expect(assigns(:question)).to eq(question)
+    end
+    it "renders the question page" do
+      get :show, id: question.id
+      expect(response).to render_template(:show, id: question.id)
+    end
+  end
 
+  context "#create" do
+    it "saves question with valid attributes" do
+      stub_current_user(question.author)
+      expect{
+        post :create, question: FactoryGirl.attributes_for(:question)
+      }.to change(Question, :count).by(1)
 
+    end
+  end
 end
