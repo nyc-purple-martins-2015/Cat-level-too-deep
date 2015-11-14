@@ -204,9 +204,9 @@
       "/Users/apprentice/Cat-level-too-deep/spec/factories/users.rb": [
         1,
         1,
-        3,
-        3,
-        3,
+        2,
+        2,
+        2,
         null,
         null
       ],
@@ -312,8 +312,8 @@
       "/Users/apprentice/Cat-level-too-deep/app/controllers/sessions_controller.rb": [
         1,
         1,
-        0,
-        0,
+        2,
+        2,
         null,
         null,
         1,
@@ -321,15 +321,15 @@
         null,
         null,
         1,
-        2,
-        2,
-        2,
-        0,
-        0,
-        0,
+        9,
+        9,
+        9,
+        5,
+        5,
+        5,
         null,
-        2,
-        2,
+        4,
+        4,
         null,
         null,
         null
@@ -393,6 +393,6 @@
         null
       ]
     },
-    "timestamp": 1447536056
+    "timestamp": 1447539675
   }
 }
