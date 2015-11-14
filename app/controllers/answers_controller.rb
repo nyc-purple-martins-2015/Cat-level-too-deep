@@ -1,5 +1,4 @@
 class AnswersController < ApplicationController
-
   def create
     @question = Question.find_by(id: params[:question_id])
     @answer = Answer.new(answer_params)
@@ -16,6 +15,4 @@ class AnswersController < ApplicationController
   def answer_params
     params.require(:answer).permit(:response).merge(user: current_user, question: @question)
   end
-
-
 end

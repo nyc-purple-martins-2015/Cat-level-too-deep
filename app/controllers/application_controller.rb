@@ -26,4 +26,3 @@ class ApplicationController < ActionController::Base
     upvotes - downvotes
   end
 end
-

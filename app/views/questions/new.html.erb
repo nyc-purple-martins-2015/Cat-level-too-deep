@@ -14,6 +14,15 @@
   <div>
     <%= f.submit %>
   </div>
+    <div>
+      <%= f.text_field :title, placeholder: "The subject of your question goes here", size: 102 %><br />
+    </div>
+    <br>
+    <div>
+      <%= text_area(:question, :query, cols: 100, rows: 20, placeholder: "The body of your question goes here") %><br />
+    </div>
+    <div>
+      <%= f.submit %>
+    </div>
   <% end %>
-
 </div>
