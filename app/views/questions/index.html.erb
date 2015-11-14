@@ -10,6 +10,7 @@
       <h4><span class=".vote"><%=render partial: "questions/question_votes", locals: {question: question} %> </span>
       <div class="vote_kitty_head"><%=image_tag "neutral_vote_cat2.png"%></div>
     <%end%>
+<<<<<<< HEAD
 
 
       <%= render partial: "questions/condensed_question_show", locals: {question: question} %> </h4>
@@ -23,5 +24,8 @@
           <h4><%=render partial: "questions/comment_form", locals: {question: question} %></h4>
         </div>
       </div>
+=======
+    <%= render partial: "questions/condensed_question_show", locals: {question: question} %> </h4>
+>>>>>>> clean up views
   <% end %>
 </div>

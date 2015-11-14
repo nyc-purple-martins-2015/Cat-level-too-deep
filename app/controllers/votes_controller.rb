@@ -1,5 +1,4 @@
 class VotesController < ApplicationController
-
   def create
     @vote = Vote.new(vote_params)
     if @vote.save && @vote.votable_type == "Question"
@@ -17,5 +16,4 @@ class VotesController < ApplicationController
   def vote_params
     params.require(:vote).permit(:up_vote, :votable_id, :votable_type, :user_id )
   end
-
 end
