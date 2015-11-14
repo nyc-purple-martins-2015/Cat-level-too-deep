@@ -11,7 +11,8 @@
       <h4><span class=".vote"><%=render partial: "questions/answer_votes", locals: {answer: answer} %> </span>
       <span class="vote_kitty_head"><%=image_tag "neutral_vote_cat2.png"%></span>
     <%end%>
-    <li><%= answer.response %></li>
+    <p><%= answer.response %></p>
+    <p>by: <%= User.find(answer.user_id).username %> | <%= answer.updated_at.hour - Time.now.hour %> hours ago<p>
     <li><p> <%= vote_count(answer) %> </p></li>
 
         <% answer.comments.each do |comment| %>
