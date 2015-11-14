@@ -7,6 +7,9 @@
   <br>
   <div>
     <%= text_area(:question, :query, cols: 100, rows: 20, placeholder: "The body of your question goes here") %><br />
+    <%= f.select(:id, options_for_select(@tag_options)) %>
+    <%= f.select(:id, options_for_select(@tag_options)) %>
+    <%= f.select(:id, options_for_select(@tag_options)) %>
   </div>
   <div>
     <%= f.submit %>

@@ -7,6 +7,7 @@ class QuestionsController < ApplicationController
 
   def new
     @question = Question.new
+    @tag_options = Tag.all.map{|tag| [ tag.category, tag.id] }
     render :new
   end
 
