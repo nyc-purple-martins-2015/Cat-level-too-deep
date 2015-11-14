@@ -12,7 +12,6 @@
     <%end%>
       <%= render partial: "questions/condensed_question_show", locals: {question: question} %> </h4>
       <%= render partial: "tags/tag_show", locals: {tags: question.tags} %>
-
       <div class="comments_section">
         <% question.comments.each do |comment| %>
           <p><%= comment.content %></p>
