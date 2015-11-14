@@ -17,7 +17,7 @@ class QuestionsController < ApplicationController
     if @question
       render :show
     else
-      render :status => 404
+      render_404
     end
   end
 
