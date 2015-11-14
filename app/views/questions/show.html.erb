@@ -14,12 +14,14 @@
     <li><%= answer.response %></li>
     <li><p> <%= vote_count(answer) %> </p></li>
 
-    <% answer.comments.each do |comment| %>
-           <p><%= comment.content %>
+        <% answer.comments.each do |comment| %>
+          <p><%= comment.content %>
         <% end %>
-        <div class ="comments">
+        <div class ="comments_section">
           <button class="comment_button_toggle", type="button">Comment</button>
-          <h4><%=render partial: "questions/answer_comment_form", locals: {answer: answer} %></h4>
+          <div class ="comments_form">
+            <h4><%=render partial: "questions/answer_comment_form", locals: {answer: answer} %></h4>
+          </div>
         </div>
 
     <% end %>

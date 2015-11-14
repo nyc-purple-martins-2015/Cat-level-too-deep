@@ -1,5 +1,6 @@
 <div class="question_summary_display">
   <h4> <a href="<%= question_path(question) %>"> <%= question.title %> </a> </h4>
+  <p> <%= question.query %> </p>
   <p> <%= question.author.username %> </p>
   <p> <%= question.created_at %> </p>
   <p> <%= vote_count(question) %> </p>
