@@ -12,7 +12,7 @@
     <%end%>
     <p><%= answer.response %></p>
     <p>by: <%= User.find(answer.user_id).username %> | <%= answer.updated_at.hour - Time.now.hour %> hours ago<p>
-    <li><p> <%= vote_count(answer) %> </p></li>
+    <li><p>votes: <%= vote_count(answer) %> </p></li>
 
         <% answer.comments.each do |comment| %>
           <p><%= comment.content %>
