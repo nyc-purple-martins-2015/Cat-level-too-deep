@@ -2,6 +2,14 @@
 <h1> <%= @question.query%> </h1>
 <ul>
   <% @question.answers.each do |answer| %>
+    <%if has_voted?(answer) && get_vote(answer).up_vote == true %>
+      <span class="vote_kitty_head"><%=image_tag "up_vote_cat.png"%></span>
+    <%elsif has_voted?(answer) && get_vote(answer).up_vote == false %>
+      <span class="vote_kitty_head"><%=image_tag "down_vote_cat.png"%></span>
+    <%else%>
+      <h4><span class=".vote"><%=render partial: "questions/answer_votes", locals: {answer: answer} %> </span>
+      <span class="vote_kitty_head"><%=image_tag "neutral_vote_cat.png"%></span>
+    <%end%>
     <li><%= answer.response %></li>
     <% end %>
   </ul>
