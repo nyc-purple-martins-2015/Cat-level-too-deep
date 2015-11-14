@@ -39,7 +39,7 @@ describe QuestionsController do
 
   context "#create" do
     it "saves question with valid attributes" do
-      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(question.author)
+      stub_current_user(question.author)
       expect{
         post :create, question: FactoryGirl.attributes_for(:question)
       }.to change(Question, :count).by(1)
