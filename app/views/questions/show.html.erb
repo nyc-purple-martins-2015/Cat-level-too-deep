@@ -1,5 +1,4 @@
 <main>
-
 <h1> <%= @question.query%> </h1>
 <ul>
   <% @question.answers.each do |answer| %>
@@ -28,7 +27,6 @@
     <% end %>
   </ul>
   <%= render partial: "questions/answer", locals: {question: @question, answer: @answer} %>
-
 </main>
 
 
