@@ -5,12 +5,12 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-u = User.create!(username: "g", password: "g", email: "g")
-q1 = Question.create!(author: u, title: "t", query: "q", best_answer_id: 1)
-q2 = u.questions.create!(title: "tttt", query: "wwwwq", best_answer_id: 1)
-q2.votes.create!(user: u)
-a= Answer.create!(user: u, question: q1, response: "an answer response")
-Vote.create(votable: q1, user:u, up_vote: true)
+calvin = User.create!(username: "calvin", password: "cat", email: "cat@example.com")
+q1 = Question.create!(author: calvin, title: "My first question", query: "What is the meaning of cat-life?", best_answer_id: 1)
+q2 = calvin.questions.create!(title: "My second question", query: "Is there catnip in heaven?", best_answer_id: 1)
+q2.votes.create!(user: calvin)
+a= Answer.create!(user: calvin, question: q1, response: "Are you catting me? It's to hunt mice!")
+Vote.create(votable: q1, user:calvin, up_vote: true)
 
 Tag.create!(category: "Clawjure")
 Tag.create!(category: "Purrl")

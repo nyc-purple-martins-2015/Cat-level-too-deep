@@ -1,0 +1,15 @@
+<div class="comment_partial">
+  <h3>Create a new comment</h3>
+  <%= form_for @comment do |f| %>
+  <div>
+    <%= text_area(:comment, :content, cols: 100, rows: 20, placeholder: "Add comment here") %>
+  </div>
+  <%= f.hidden_field :user_id, { :value => current_user } %>
+  <%= f.hidden_field :commentable_id, { :value => answer.id } %>
+  <%= f.hidden_field :commentable_type, { :value => "Answer" } %>
+  </br>
+  <div>
+    <%= f.submit %>
+  </div>
+  <% end %>
+</div>

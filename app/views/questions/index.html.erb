@@ -13,5 +13,12 @@
 
 
       <%= render partial: "questions/condensed_question_show", locals: {question: question} %> </h4>
+        <% question.comments.each do |comment| %>
+           <p><%= comment.content %>
+        <% end %>
+        <div class ="comments">
+          <button class="comment_button_toggle", type="button">Comment</button>
+          <h4><%=render partial: "questions/comment_form", locals: {question: question} %></h4>
+        </div>
   <% end %>
 </div>
