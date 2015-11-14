@@ -12,6 +12,18 @@ describe SessionsController do
       expect(response).to render_template(:new)
     end
   end
+
+  context 'create' do
+    let(:user) {FactoryGirl.create :user}
+    it 'gives an invalid alert if an invalid username or password is typed in' do
+      post :create, user: user
+      expect(flash[:alert]).to be_present
+    end
+    it 'gives an invalid alert if an invalid username or password is typed in' do
+      post :create, user: user
+      expect(response).to render_template("questions/index")
+    end
+  end
   # context 'destroy' do
 
   # end
