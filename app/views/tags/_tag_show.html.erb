@@ -1,0 +1,7 @@
+<div class="tag_post_display">
+<% tags.each do |tag| %>
+  <span>
+    <a href=" <%= tag_path(tag) %> "> <%= tag.category %> </a>
+  </span>
+<% end %>
+</div>
