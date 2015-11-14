@@ -188,9 +188,9 @@
       "/Users/apprentice/Cat-level-too-deep/spec/factories/questions.rb": [
         1,
         1,
-        3,
-        3,
-        3,
+        4,
+        4,
+        4,
         null,
         null
       ],
@@ -204,9 +204,9 @@
       "/Users/apprentice/Cat-level-too-deep/spec/factories/users.rb": [
         1,
         1,
-        3,
-        3,
-        3,
+        5,
+        5,
+        5,
         null,
         null
       ],
@@ -318,7 +318,7 @@
         null,
         null,
         1,
-        0,
+        1,
         0,
         0,
         null,
@@ -349,7 +349,7 @@
         1,
         null,
         1,
-        0,
+        1,
         null,
         null,
         1,
@@ -383,6 +383,6 @@
         null
       ]
     },
-    "timestamp": 1447454584
+    "timestamp": 1447465141
   }
 }

@@ -35,4 +35,13 @@ describe QuestionsController do
       expect(response).to render_template(:show, id: question.id)
     end
   end
+
+  context "#create" do
+    it "saves question with valid attributes" do
+      expect{
+        post :create, user_id: FactoryGirl.create(:user), question: FactoryGirl.attributes_for(:question)
+      }.to change(Question, :count).by(1)
+
+    end
+  end
 end
