@@ -1,8 +1,12 @@
 
   <div>
-    <%= button_to 'UpKitty!', votes_path, method: :post, data: [votable: question, up_vote: true] %>
+    <%= button_to 'UpKitty!', {controller: "votes",
+ action: "create", vote: {votable_id: question.id, votable_type: "Question", up_vote: true, user_id: current_user}}, method: :post %>
   </div>
 
-  <div>
-    <%= button_to 'DownKitty!', votes_path, method: :post, data: [votable: question, up_vote: false] %>
+ <div>
+    <%= button_to 'DownKitty!', {controller: "votes",
+ action: "create", vote: {votable_id: question.id, votable_type: "Question", up_vote: false, user_id: current_user}}, method: :post %>
   </div>
+
+

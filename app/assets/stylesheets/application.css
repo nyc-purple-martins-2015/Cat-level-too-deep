@@ -7,3 +7,7 @@
   border: solid black 1px;
   width: 100%;
 }
+
+.vote_kitty_head img{
+  height: 4em;
+}
