@@ -1,6 +1,4 @@
 class ApplicationController < ActionController::Base
-  # Prevent CSRF attacks by raising an exception.
-  # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
   helper_method :current_user, :logged_in?, :has_voted?, :get_vote, :vote_count
@@ -27,5 +25,5 @@ class ApplicationController < ActionController::Base
     downvotes = Vote.where(votable_id: votable.id, up_vote: false).count
     upvotes - downvotes
   end
-
 end
+
