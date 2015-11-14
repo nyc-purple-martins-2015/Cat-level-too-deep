@@ -13,11 +13,11 @@ class QuestionsController < ApplicationController
   def show
     @comment = Comment.new
     @answer = Answer.new
-    @question=Question.find_by(id: params[:id])
+    @question = Question.find_by(id: params[:id])
     if @question
       render :show
     else
-      # doesnt exist bad request erb
+      render :status => 404
     end
   end
 
@@ -47,4 +47,3 @@ class QuestionsController < ApplicationController
     params.require(:tags).permit(:category, :question_id)
   end
 end
-
