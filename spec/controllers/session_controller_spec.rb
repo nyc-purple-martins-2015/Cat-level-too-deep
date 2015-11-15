@@ -18,7 +18,6 @@ describe SessionsController do
     let(:user) { FactoryGirl.create :user }
     let(:logging_in_user) { User.create!(username: "Awesomo4000", password: "password", email: "Awesomo4000 @awesomo.com") }
 
-
     it 'gives an invalid alert if a session cannot be created' do
       post :create
       expect(flash[:alert]).to be_present

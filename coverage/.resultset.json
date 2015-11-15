@@ -175,6 +175,25 @@
       "/Users/apprentice/Cat-level-too-deep/spec/factories/answers.rb": [
         1,
         1,
+        2,
+        null,
+        null
+      ],
+      "/Users/apprentice/Cat-level-too-deep/spec/factories/comments.rb": [
+        1,
+        1,
+        null,
+        1,
+        2,
+        2,
+        2,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
         1,
         null,
         null
@@ -188,9 +207,9 @@
       "/Users/apprentice/Cat-level-too-deep/spec/factories/questions.rb": [
         1,
         1,
-        1,
-        1,
-        1,
+        2,
+        2,
+        2,
         null,
         null
       ],
@@ -204,9 +223,9 @@
       "/Users/apprentice/Cat-level-too-deep/spec/factories/users.rb": [
         1,
         1,
-        2,
-        2,
-        2,
+        4,
+        4,
+        4,
         null,
         null
       ],
@@ -221,6 +240,8 @@
         null,
         1,
         1,
+        1,
+        null,
         1,
         null,
         1,
@@ -309,27 +330,25 @@
         null,
         null
       ],
-      "/Users/apprentice/Cat-level-too-deep/app/controllers/sessions_controller.rb": [
+      "/Users/apprentice/Cat-level-too-deep/app/controllers/comments_controller.rb": [
         1,
-        1,
-        2,
-        2,
-        null,
         null,
         1,
-        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        null,
+        0,
+        null,
         null,
         null,
         1,
-        9,
-        9,
-        9,
-        5,
-        5,
-        5,
         null,
-        4,
-        4,
+        1,
+        0,
         null,
         null,
         null
@@ -367,6 +386,14 @@
         null,
         null
       ],
+      "/Users/apprentice/Cat-level-too-deep/app/models/comment.rb": [
+        1,
+        1,
+        1,
+        null,
+        1,
+        null
+      ],
       "/Users/apprentice/Cat-level-too-deep/app/models/user.rb": [
         1,
         1,
@@ -386,13 +413,25 @@
         1,
         1,
         1,
+        1,
         null,
         1,
         1,
         1,
         null
+      ],
+      "/Users/apprentice/Cat-level-too-deep/app/models/answer.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        null
       ]
     },
-    "timestamp": 1447539675
+    "timestamp": 1447547203
   }
 }
