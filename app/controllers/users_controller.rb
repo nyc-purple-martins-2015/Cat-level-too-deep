@@ -10,7 +10,7 @@ class UsersController < ApplicationController
       flash[:notice] = "Welcome #{@user.username}!"
       redirect_to root_path
     else
-      flash.now[:alert] = "Invalid username or password. Please try again."
+      flash.now[:alert] = "Invalid username, email, or password. Please try again."
       render :new
     end
   end
