@@ -1,5 +1,9 @@
+<% if flash[:alert] %>
+  <%= flash[:alert] %>
+<% end %>
+
 <div>
-  <h3>Create a new question!?</h3>
+  <h3>Create a new question!</h3>
   <%= form_for @question do |f| %>
     <div>
       <%= f.text_field :title, placeholder: "The subject of your question goes here", size: 102 %><br />
