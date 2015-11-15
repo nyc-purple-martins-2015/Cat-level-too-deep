@@ -21,7 +21,7 @@ describe CommentsController  do
     end
     it 'redirects to the question path if a comment on a question is saved' do
       post :create, comment: {content: comment_on_question.content, commentable_id: comment_on_question.commentable_id, commentable_type: comment_on_question.commentable_type, user_id: comment_on_question.user_id}
-      expect(response).to redirect_to questions_path
+      expect(response).to redirect_to question_path(comment_on_question.commentable)
     end
     it 'redirects to the question path if a comment on an answer is saved' do
       post :create, comment: {content: comment_on_answer.content, commentable_id: comment_on_answer.commentable_id, commentable_type: comment_on_answer.commentable_type, user_id: comment_on_answer.user_id}

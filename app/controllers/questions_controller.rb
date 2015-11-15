@@ -1,13 +1,25 @@
 class QuestionsController < ApplicationController
   def index
     @comment = Comment.new
-    @questions = Question.all
+    @questions = Question.all.limit(25)
     render :index
   end
 
   def new
     @question = Question.new
     render :new
+  end
+
+  def most_recent
+    @comment = Comment.new
+    @questions = Question.order(created_at: :desc)
+    render :index
+  end
+
+  def most_votes
+    @comment = Comment.new
+    @questions = Question.all.sort_by{|question| question.votes.where(up_vote: false).count - question.votes.where(up_vote: true).count}
+    render :index
   end
 
   def show
@@ -37,6 +49,7 @@ class QuestionsController < ApplicationController
       render :new
     end
   end
+
 
   private
 

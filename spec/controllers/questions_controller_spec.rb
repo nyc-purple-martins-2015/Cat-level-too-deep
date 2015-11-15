@@ -3,9 +3,9 @@ require 'rails_helper'
 describe QuestionsController do
 
   context "#index" do
-    it "assigns @questions to Question.all" do
+    it "assigns @questions to Question.all,limit(25)" do
       get :index
-      expect(assigns(:questions)).to eq(Question.all)
+      expect(assigns(:questions)).to eq(Question.all.limit(25))
     end
     it "renders the question index page" do
       get :index

@@ -4,18 +4,23 @@
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
+  <link href="http://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" rel="stylesheet">
 </head>
 <body>
 
+<nav class="menu">
   <% if logged_in? %>
-    <h3 class = "login"><%= link_to "New Question", new_question_path %> | <%= link_to "Tags", tags_path %> | <%= link_to "Logout", logout_path %></h3>
-    <h3 class = "login">Hi, <%= current_user.username %></h3>
-    <h1><%= link_to image_tag('cat_logo_with_name.gif'), root_path %></h1>
+  <ul class="inline-list">
+    <li><h3 class = "login"><%= link_to "Logout", logout_path %></h3></li>
+    <li><h3 class = "login">Hi, <%= current_user.username %></h3></li>
+  </ul>
   <% else %>
-    <h3 class = "login"><%= link_to "Tags", tags_path %> | <%= link_to "Register", register_path %></h3>
-    <h1><%= link_to image_tag('cat_logo_with_name.gif'), root_path %></h1>
+    <h3 class = "login"><%= link_to "Register", register_path %></h3>
     <%= render partial: "sessions/new_form", locals: {user: @user} %>
   <% end %>
+</nav>
+  <h1><%= link_to image_tag('cat_logo_with_name.gif'), root_path %></h1>
+  <%= link_to "New Question", new_question_path %> | <%= link_to "Tags", tags_path %> |
   <div class="line"></div>
 <%= yield %>
 </body>

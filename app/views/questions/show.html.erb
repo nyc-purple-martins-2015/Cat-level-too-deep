@@ -3,7 +3,24 @@
 <% end %>
 
 <main>
-<h1><%= @question.query %></h1>
+<div class="question-show-contianer">
+  <h1><%= @question.title %></h1>
+  <p> <%= @question.query %> </p>
+</div>
+<div class="comment-on-questions">
+  <h5>Comments</h5>
+  <div class="comments-block">
+    <% @question.comments.each do |comment| %>
+      <h6> <%= comment.content %> | posted by <%= comment.user.username %></h6>
+    <% end %>
+  </div>
+  <div class ="comments_section">
+    <button class="comment_button_toggle", type="button">Comment</button>
+    <div class ="comments_form">
+      <h4><%=render partial: "questions/comment_form", locals: {question: @question} %></h4>
+    </div>
+  </div>
+</div>
 <ul>
   <% @question.answers.each do |answer| %>
     <%if has_voted?(answer) && get_vote(answer).up_vote == true %>
@@ -20,10 +37,12 @@
       <p>by: <%= User.find(answer.user_id).username %> | <%= answer.updated_at.hour - Time.now.hour %> hours ago<p>
       <p>votes: <%= vote_count(answer) %> </p>
 
-      <h4>Comment</h4>
+      <h5>Comments</h5>
+      <div class="comments-block">
         <% answer.comments.each do |comment| %>
-          <p><%= comment.content %></p>
+          <h6> <%= comment.content %> | posted by <%= comment.user.username %></h6>
         <% end %>
+      </div>
 
       <div class ="comments_section">
         <button class="comment_button_toggle", type="button">add comment</button>

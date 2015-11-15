@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+  root 'questions#index'
+  get 'questions/most_recent' => 'questions#most_recent'
+  get 'questions/most_votes' => 'questions#most_votes'
+  get 'questions/trending' => 'questions#trending'
+
+  get 'register' => 'users#new', as: :register
+  get 'logout' => 'sessions#destroy', as: :logout
+  get 'login' => 'sessions#new', as: :login
+  post 'session_create' => 'sessions#create', as: :session_create
+  get '/tags' => 'tags#index'
 
   resources :users, only: :create
   resources :tags, only: [:index, :show]
@@ -9,12 +19,6 @@ Rails.application.routes.draw do
     resources :answers, only: [:create]
   end
 
-  root 'questions#index'
-  get 'register' => 'users#new', as: :register
-  get 'logout' => 'sessions#destroy', as: :logout
-  get 'login' => 'sessions#new', as: :login
-  post 'session_create' => 'sessions#create', as: :session_create
-  get '/tags' => 'tags#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
