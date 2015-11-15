@@ -14,9 +14,7 @@
   <% else %>
     <h3 class = "login"><%= link_to "Register", register_path %></h3>
     <h1><%= link_to image_tag('cat_logo_with_name.gif'), root_path %></h1>
-      <% if flash[:alert] %>
-        <%= flash[:alert] %>
-      <% end %>
+
     <%= render partial: "sessions/new_form", locals: {user: @user} %>
   <% end %>
 
