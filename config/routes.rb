@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   resources :users, only: :create
-  resources :tags, only: [:index, :show, :create, :destroy]
+  resources :tags, only: [:index, :show]
   resource :session,  only: [:new, :create, :destroy]
 
   resource :votes, only: [:create]
