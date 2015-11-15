@@ -1,7 +1,3 @@
-<% if flash[:alert] %>
-  <%= flash[:alert] %>
-<% end %>
-
 <div>
   <%= button_to 'UpKitty!', {controller: "votes", action: "create", vote: {votable_id: question.id, votable_type: "Question", up_vote: true, user_id: current_user}}, method: :post %>
 </div>
