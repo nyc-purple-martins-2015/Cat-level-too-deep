@@ -8,8 +8,8 @@ class CommentsController < ApplicationController
     elsif @comment.save && @comment.commentable_type == "Answer"
       redirect_to question_path(id: Answer.find(@comment.commentable_id).question.id)
     else
-      flash.now[:alert] = "Comment can't be blank."
-      render :"questions/index"
+      flash[:alert] = "We are sorry but your comment failed to save"
+      redirect_to root_path
     end
   end
 
