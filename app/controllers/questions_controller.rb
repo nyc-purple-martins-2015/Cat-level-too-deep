@@ -33,6 +33,7 @@ class QuestionsController < ApplicationController
     if @question.save
       redirect_to questions_path
     else
+      flash.now[:alert] = "Please have both forms completed before creating a question."
       render :new
     end
   end
