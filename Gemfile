@@ -29,7 +29,7 @@ gem 'bcrypt', '~> 3.1.7'
 # gem 'capistrano-rails', group: :development
 group :test do
   gem 'simplecov', :require=> false
-  # gem 'capybara-rails'
+  gem 'capybara'
 end
 
 group :development, :test do
