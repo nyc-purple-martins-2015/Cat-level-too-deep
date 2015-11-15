@@ -43,8 +43,4 @@ class QuestionsController < ApplicationController
   def question_params
     params.require(:question).permit(:title, :query, :best_answer_id, :user_id )
   end
-
-  def tags_params
-    params.require(:tags).permit(:category, :question_id)
-  end
 end
