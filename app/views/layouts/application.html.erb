@@ -19,8 +19,11 @@
     <%= render partial: "sessions/new_form", locals: {user: @user} %>
   <% end %>
 </nav>
-  <h1><%= link_to image_tag('cat_logo_with_name.gif'), root_path %></h1>
-  <%= link_to "New Question", new_question_path %> | <%= link_to "Tags", tags_path %> |
+  <h1><%= link_to image_tag('cat_logo_with_name.gif'), root_path %>
+    <span class="inline-block-span">
+      <%= link_to "New Question", new_question_path %> <%= link_to "Tags", tags_path %>
+    </span>
+  </h1>
   <div class="line"></div>
 <%= yield %>
 </body>
