@@ -2,10 +2,11 @@ class AnswersController < ApplicationController
   def create
     @question = Question.find_by(id: params[:question_id])
     @answer = Answer.new(answer_params)
+    @comment = Comment.new
     if @answer.save
       redirect_to question_path(@question)
     else
-      flash.now[:notice] = "Response can't be blank."
+      flash.now[:alert] = "Response can't be blank."
       render :"questions/show"
     end
   end
