@@ -8,6 +8,9 @@
   <div>
     <%= text_area(:question, :query, cols: 100, rows: 20, placeholder: "The body of your question goes here") %><br />
   </div>
+  <span>Tags:
+    <%= text_field_tag :tags, params[:tags] %>
+  </span>
   <div>
     <%= f.submit %>
   </div>

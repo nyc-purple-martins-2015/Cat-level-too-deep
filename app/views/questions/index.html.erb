@@ -10,9 +10,8 @@
       <h4><span class=".vote"><%=render partial: "questions/question_votes", locals: {question: question} %> </span>
       <div class="vote_kitty_head"><%=image_tag "neutral_vote_cat2.png"%></div>
     <%end%>
-
-
       <%= render partial: "questions/condensed_question_show", locals: {question: question} %> </h4>
+      <%= render partial: "tags/tag_show", locals: {tags: question.tags} %>
 
       <div class="comments_section">
         <% question.comments.each do |comment| %>
