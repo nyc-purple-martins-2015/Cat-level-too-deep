@@ -31,6 +31,22 @@
   margin-top: -20px;
 }
 
+.inline-block-span {
+  display: inline;
+  margin-left: 600px;
+}
+
+.inline-block-span a{
+  /*outline:1px solid black;*/
+  padding:4px;
+  background-color: #9ea3a9;
+  color: white;
+}
+
+.inline-block-span a:hover{
+  background: orange;
+}
+
 .menu {
   background-color: black;
   color: white;

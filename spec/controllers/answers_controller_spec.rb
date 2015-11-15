@@ -36,7 +36,7 @@ describe AnswersController do
       bad_answer_attributes = our_answer.attributes
       bad_answer_attributes[:response] = ""
       post :create, answer: bad_answer_attributes, question_id: our_question.id
-      expect(flash[:alert]).to eq("Response can't be blank.")
+      expect(flash[:alert]).to eq("Response can't be blank and you must be logged in.")
     end
     it 'renders the show template for questions if the answer is not saved' do
       stub_current_user(our_user)

@@ -34,6 +34,11 @@ class QuestionsController < ApplicationController
   end
 
   def create
+    if !logged_in?
+      @question = Question.new
+      flash.now[:alert] = "Please log in."
+      return render :new
+    end
 
     @question = current_user.questions.new(question_params)
     if params[:tags]
@@ -54,6 +59,7 @@ class QuestionsController < ApplicationController
   private
 
   def question_params
+    # return nil if !logged_in?
     params.require(:question).permit(:title, :query, :best_answer_id, :user_id )
   end
 end
