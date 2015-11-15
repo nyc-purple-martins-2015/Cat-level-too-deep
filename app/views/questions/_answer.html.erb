@@ -1,3 +1,5 @@
+<h3>Add an answer:</h3>
+<div>
   <%= form_for [question, answer] do |f| %>
   <div>
     <%= text_area(:answer, :response, cols: 100, rows: 20, placeholder: "Your answer goes here") %>
@@ -6,3 +8,4 @@
     <%= f.submit %>
   </div>
   <% end %>
+</div>

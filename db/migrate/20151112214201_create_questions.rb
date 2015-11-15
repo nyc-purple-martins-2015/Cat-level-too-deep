@@ -4,9 +4,9 @@ class CreateQuestions < ActiveRecord::Migration
       t.references :user, null: false
       t.string :title, null: false
       t.text :query, null: false
-      t.integer :best_answer_id
+      t.integer :best_answer_id, default: false
 
-      t.timestamps null: false, null: false
+      t.timestamps null: false
     end
   end
 end

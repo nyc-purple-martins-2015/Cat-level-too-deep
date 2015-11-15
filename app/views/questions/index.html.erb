@@ -1,4 +1,8 @@
 <div>
+  <% if flash[:alert] %>
+    <%= flash[:alert] %>
+  <% end %>
+
   <br>
   <h3>Questions</h3>
   <% @questions.each do |question| %>
@@ -12,7 +16,6 @@
     <%end%>
       <%= render partial: "questions/condensed_question_show", locals: {question: question} %> </h4>
       <%= render partial: "tags/tag_show", locals: {tags: question.tags} %>
-
       <div class="comments_section">
         <% question.comments.each do |comment| %>
           <p><%= comment.content %></p>
