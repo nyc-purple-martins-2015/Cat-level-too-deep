@@ -1,4 +1,8 @@
 <div>
+  <% if flash[:alert] %>
+    <%= flash[:alert] %>
+  <% end %>
+
   <br>
   <h3>Questions</h3>
   <% @questions.each do |question| %>
