@@ -8,7 +8,7 @@ class CommentsController < ApplicationController
     elsif @comment.save && @comment.commentable_type == "Answer"
       redirect_to question_path(id: Answer.find(@comment.commentable_id).question.id)
     else
-      flash[:alert] = "We are sorry but your comment failed to save"
+      flash[:alert] = "We are sorry but your comment failed to save, you probably aren't logged in or are submitting an empty comment!"
       redirect_to root_path
     end
   end
@@ -16,6 +16,7 @@ class CommentsController < ApplicationController
   private
 
   def comment_params
+    return nil if !logged_in?
     params.require(:comment).permit(:content, :commentable_id, :commentable_type).merge(user_id: current_user.id)
   end
 

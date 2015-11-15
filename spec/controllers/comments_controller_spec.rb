@@ -28,8 +28,9 @@ describe CommentsController  do
       expect(response).to redirect_to question_path(comment_on_answer.commentable.question.id)
     end
     it 'redirects to root page if the comment is not saved and alerts the user' do
+      stub_current_user(FactoryGirl.create(:user))
       post :create, comment: {content: "", commentable_id: 1, commentable_type: "", user_id: 1}
-      expect(flash[:alert]).to eq("We are sorry but your comment failed to save")
+      expect(flash[:alert]).to eq("We are sorry but your comment failed to save, you probably aren't logged in or are submitting an empty comment!")
       expect(response).to redirect_to(root_path)
     end
   end
