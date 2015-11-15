@@ -14,6 +14,12 @@
       <h6> <%= comment.content %> | posted by <%= comment.user.username %></h6>
     <% end %>
   </div>
+  <div class ="comments_section">
+    <button class="comment_button_toggle", type="button">Comment</button>
+    <div class ="comments_form">
+      <h4><%=render partial: "questions/comment_form", locals: {question: @question} %></h4>
+    </div>
+  </div>
 </div>
 <ul>
   <% @question.answers.each do |answer| %>

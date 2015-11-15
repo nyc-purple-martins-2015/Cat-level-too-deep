@@ -4,7 +4,7 @@ class CommentsController < ApplicationController
     @questions = Question.all
     @comment = Comment.new(comment_params)
     if @comment.save && @comment.commentable_type == "Question"
-      redirect_to questions_path
+      redirect_to question_path(id: @comment.commentable_id)
     elsif @comment.save && @comment.commentable_type == "Answer"
       redirect_to question_path(id: Answer.find(@comment.commentable_id).question.id)
     else
