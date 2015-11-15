@@ -5,25 +5,28 @@
 
   <br>
   <h3>Questions</h3>
-  <% @questions.each do |question| %>
-    <%if has_voted?(question) && get_vote(question).up_vote == true %>
-      <div class="vote_kitty_head"><%=image_tag "up_vote_cat.png"%></div>
-    <%elsif has_voted?(question) && get_vote(question).up_vote == false %>
-      <div class="vote_kitty_head"><%=image_tag "down_vote_cat.png"%></div>
-    <%else%>
-      <h4><span class=".vote"><%=render partial: "questions/question_votes", locals: {question: question} %> </span>
-      <div class="vote_kitty_head"><%=image_tag "neutral_vote_cat2.png"%></div>
-    <%end%>
-      <%= render partial: "questions/condensed_question_show", locals: {question: question} %> </h4>
-      <%= render partial: "tags/tag_show", locals: {tags: question.tags} %>
-      <div class="comments_section">
-        <% question.comments.each do |comment| %>
-          <p><%= comment.content %></p>
-        <% end %>
-        <button class="comment_button_toggle", type="button">Comment</button>
-        <div class ="comments_form">
-          <h4><%=render partial: "questions/comment_form", locals: {question: question} %></h4>
+  <div class="sorting-links"><a href=" <%= questions_most_recent_path %> ">sort by most recent</a> | <a href="<%= questions_most_votes_path %>">sort by most votes</a>
+  <div class="questions-index-div">
+    <% @questions.each do |question| %>
+      <%if has_voted?(question) && get_vote(question).up_vote == true %>
+        <div class="vote_kitty_head"><%=image_tag "up_vote_cat.png"%></div>
+      <%elsif has_voted?(question) && get_vote(question).up_vote == false %>
+        <div class="vote_kitty_head"><%=image_tag "down_vote_cat.png"%></div>
+      <%else%>
+        <h4><span class=".vote"><%=render partial: "questions/question_votes", locals: {question: question} %> </span>
+        <div class="vote_kitty_head"><%=image_tag "neutral_vote_cat2.png"%></div>
+      <%end%>
+        <%= render partial: "questions/condensed_question_show", locals: {question: question} %> </h4>
+        <%= render partial: "tags/tag_show", locals: {tags: question.tags} %>
+        <div class="comments_section">
+          <%# question.comments.each do |comment| %>
+            <p><%# comment.content %></p>
+          <%# end %>
+          <button class="comment_button_toggle", type="button">Comment</button>
+          <div class ="comments_form">
+            <h4><%=render partial: "questions/comment_form", locals: {question: question} %></h4>
+          </div>
         </div>
-      </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>

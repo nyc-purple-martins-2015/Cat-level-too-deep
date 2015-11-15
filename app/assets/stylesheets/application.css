@@ -15,3 +15,18 @@
 .comments_form {
   display: none;
 }
+
+.question-show-contianer {
+  padding: 5px;
+  outline: 1px solid black;
+}
+
+.comments-block {
+  background-color: lightgrey;
+  outline: 1px solid black;
+  margin-left: 30px;
+}
+
+.comments-block h6 {
+  margin-top: -20px;
+}
