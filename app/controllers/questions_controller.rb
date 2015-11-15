@@ -13,11 +13,11 @@ class QuestionsController < ApplicationController
   def show
     @comment = Comment.new
     @answer = Answer.new
-    @question=Question.find_by(id: params[:id])
+    @question = Question.find_by(id: params[:id])
     if @question
       render :show
     else
-      # doesnt exist bad request erb
+      render_404
     end
   end
 
@@ -26,6 +26,7 @@ class QuestionsController < ApplicationController
     if @question.save
       redirect_to question_path(@question)
     else
+      flash.now[:alert] = "Please have both forms completed before creating a question."
       render :new
     end
   end
@@ -35,6 +36,4 @@ class QuestionsController < ApplicationController
   def question_params
     params.require(:question).permit(:title, :query, :best_answer_id, :user_id )
   end
-
 end
-

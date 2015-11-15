@@ -10,13 +10,11 @@
   <% if logged_in? %>
     <h3 class = "login"><%= link_to "New Question", new_question_path %> | <%= link_to "Logout", logout_path %></h3>
     <h3 class = "login">Hi, <%= current_user.username %></h3>
-    <h1><%= link_to 'CatLevelTooDeep', root_path %></h1>
+    <h1><%= link_to image_tag('cat_logo_with_name.gif'), root_path %></h1>
   <% else %>
     <h3 class = "login"><%= link_to "Register", register_path %></h3>
-    <h1><%= link_to 'CatLevelTooDeep', root_path %></h1>
-      <% if flash[:alert] %>
-        <%= flash[:alert] %>
-      <% end %>
+    <h1><%= link_to image_tag('cat_logo_with_name.gif'), root_path %></h1>
+
     <%= render partial: "sessions/new_form", locals: {user: @user} %>
   <% end %>
 
