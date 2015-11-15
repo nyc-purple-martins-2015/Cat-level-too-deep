@@ -31,7 +31,7 @@ class QuestionsController < ApplicationController
       end
     end
     if @question.save
-      redirect_to question_path(@question)
+      redirect_to questions_path
     else
       render :new
     end
