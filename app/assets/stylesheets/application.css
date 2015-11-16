@@ -192,19 +192,19 @@ h3 a:hover {
 #form-container {
   width: 280px;
   margin-top: 20em;
-  margin-left: 25em;
+  margin-left: 15em;
   padding: 30px;
   border: 1px solid #e6e6e6;
   background: #fff;
 }
 
 .question-up {
-  margin-top: -5em;
-  margin-left: -5em;
+  margin-top: 5em;
+  margin-left: 15em;
   margin-right: 5em;
   margin-bottom: -15em;
-/*  margin-top: -3em;
-  margin-left: 15em;*/
+  /*margin-top: -3em;*/
+  /*margin-left: 15em;*/
 }
 
 .question-down {
@@ -297,3 +297,9 @@ h3 a:hover {
 .answer-down {
   margin-left: 15em;
 }
+
+/*.errors {
+  margin: 0 auto;
+  height: 2em;
+  width: 5em;
+}*/

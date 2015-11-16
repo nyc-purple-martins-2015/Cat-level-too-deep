@@ -1,9 +1,9 @@
-<div>
+
+
+  <div class="content">
   <% if flash[:alert] %>
     <%= flash[:alert] %>
   <% end %>
-
-  <div class="content">
     <div class="side-btns">
       <div class="sort"><a href=" <%= questions_most_recent_path %> ">sort by most recent</a></div>
       <div class="sort"><a href="<%= questions_most_votes_path %>">sort by most votes</a></div>
