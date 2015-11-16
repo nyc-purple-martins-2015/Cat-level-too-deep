@@ -4,7 +4,6 @@
 $(document).ready(function () {
 
     $(".comment_button_toggle").click(function () {
-      debugger
       selected_comment = $(this)
       $(selected_comment.parents(".comments_section").children(".comments_form")).toggle();
     });

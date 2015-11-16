@@ -1,6 +1,13 @@
+* {
+  font-family: Helvetica;
+  margin: 0;
+}
+
 .login {
   float: right;
   margin-right: 1em;
+  color: white;
+  text-decoration: none;
 }
 
 .line {
@@ -16,78 +23,43 @@
   display: none;
 }
 
-.question-show-contianer {
-  padding: 5px;
-  outline: 1px solid black;
+.wrapper {
+  position: relative;
+  min-height: 100%;
+  height: auto !important;
+  margin: 0 auto -90px;
 }
 
-.comments-block {
-  background-color: lightgrey;
-  /*outline: 1px solid black;*/
-  margin-left: 30px;
-}
-
-.comments-block h6 {
-  margin-top: -20px;
-}
-
-.inline-block-span {
-  display: inline;
-  margin-left: 600px;
-}
-
-.inline-block-span a{
-  /*outline:1px solid black;*/
-  padding:4px;
-  background-color: #9ea3a9;
-  color: white;
-}
-
-.inline-block-span a:hover{
-  background: orange;
-}
-
-.menu {
+nav {
+  width: 100%;
+  height: 1em;
   background-color: black;
-  color: white;
-  padding: 1.5rem 3rem;
-  height: auto; }
-  .menu .inline-list {
-    text-align: center; }
-    .menu .inline-list li {
-      float: none;
-      display: inline-block; }
-    .menu .inline-list a {
-      color: #fff;
-      padding-bottom: 0.5rem; }
-      .menu .inline-list a:hover {
-        color: #87d37c;
-        transition: all .3s ease-in-out; }
-    .menu .inline-list .active a {
-      color: #87d37c; }
-  .menu .account {
-    position: absolute;
-    top: 3%;
-    right: 3%; }
-    .menu .account a, .menu .account i {
-      color: #fff; }
-  @media only screen and (min-width: 40.063em) {
-    .menu {
-      height: 5rem; }
-      .menu .inline-list {
-        float: left;
-        margin: 0 0 0 1.5rem; }
-      .menu a:hover {
-        border-bottom: 2px solid #E86C19; } }
-  .menu .account-action {
-    float: right;
-    margin: -.75rem 0 0 0; }
-    .menu .account-action li {
-      margin-left: .2rem; }
-    .menu .account-action a {
-      padding: 0.75rem 1rem; }
-    .menu .account-action a.signup {
-      font-weight: bold;
-      background-color: #3d4146;
-      border-radius: 3px; }
+  padding: 10px 0px 10px 0px;
+}
 
+.content {
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: 4em;
+}
+
+nav ul {
+  float: right;
+  list-style-type: none;
+}
+
+nav li {
+  float: right;
+  margin-left: 2em;
+  color: white;
+  list-style-type: none;
+}
+
+nav li a:hover {
+  color: #CF5300;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+}
