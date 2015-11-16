@@ -2,15 +2,17 @@
   <%= flash[:alert] %>
 <% end %>
 
-<h1>Register</h1>
-<div>
-  <%= form_for @user do |f| %>
-    <%= f.label :username %>
-    <%= f.text_field :username %><br/>
-    <%= f.label :email %>
-    <%= f.text_field :email %><br/>
-    <%= f.label :password %>
-    <%= f.password_field :password %><br/>
-    <%= f.submit %>
-  <% end %>
+<div id="form-container">
+  <h1>Register</h1>
+  <div class="register-form">
+    <%= form_for @user do |f| %>
+      <%= f.label :username %>
+      <%= f.text_field :username %><br/>
+      <%= f.label :email %>
+      <%= f.text_field :email %><br/>
+      <%= f.label :password %>
+      <%= f.password_field :password %><br/>
+      <%= f.submit %>
+    <% end %>
+  </div>
 </div>

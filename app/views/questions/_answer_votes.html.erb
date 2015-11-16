@@ -1,7 +1,7 @@
-<div>
+<div class="answer-up">
   <%= button_to 'UpKitty!', {controller: "votes", action: "create", vote: {votable_id: answer.id, votable_type: "Answer", up_vote: true, user_id: current_user}}, method: :post %>
 </div>
 
-<div>
+<div class="answer-down">
   <%= button_to 'DownKitty!', {controller: "votes", action: "create", vote: {votable_id: answer.id, votable_type: "Answer", up_vote: false, user_id: current_user}}, method: :post %>
 </div>

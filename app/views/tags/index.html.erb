@@ -1,8 +1,8 @@
-<main>
-<h1> Tags </h1>
-<ul>
-<% @tags.each do |tag| %>
-  <li><class="tag-title"><%= link_to tag.category, tag_path(tag) %></li>
-</ul>
-<% end %>
-</main>
+<div class="content">
+  <h1 class="tag-list"> Tags </h1>
+  <ul>
+    <% @tags.each do |tag| %>
+      <li class="tag-title"><%= link_to tag.category, tag_path(tag) %></li>
+    <% end %>
+  </ul>
+</div>

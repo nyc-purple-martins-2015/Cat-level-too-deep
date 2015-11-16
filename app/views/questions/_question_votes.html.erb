@@ -1,9 +1,9 @@
-<div>
+<span class="question-up">
   <%= button_to 'UpKitty!', {controller: "votes", action: "create", vote: {votable_id: question.id, votable_type: "Question", up_vote: true, user_id: current_user}}, method: :post %>
-</div>
+</span>
 
-<div>
+<span class="question-down">
   <%= button_to 'DownKitty!', {controller: "votes", action: "create", vote: {votable_id: question.id, votable_type: "Question", up_vote: false, user_id: current_user}}, method: :post %>
-</div>
+</span>
 
 

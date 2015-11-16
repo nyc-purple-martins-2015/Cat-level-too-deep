@@ -2,13 +2,13 @@
   <%= flash[:alert] %>
 <% end %>
 
-<main>
+<div class="content">
 <div class="question-show-contianer">
   <h1><%= @question.title %></h1>
   <p> <%= @question.query %> </p>
 </div>
 <div class="comment-on-questions">
-  <h5>Comments</h5>
+  <h5 class="comment">Comments:</h5>
   <div class="comments-block">
     <% @question.comments.each do |comment| %>
       <h6> <%= comment.content %> | posted by <%= comment.user.username %></h6>
@@ -32,12 +32,13 @@
       <span class="vote_kitty_head"><%=image_tag "neutral_vote_cat2.png"%></span>
     <%end%>
 
-    <h3>Anwer</h3>
+    <div class="display-answer">
+    <h3 >Anwer:</h3>
       <p><%= answer.response %></p>
       <p>by: <%= User.find(answer.user_id).username %> | <%= answer.updated_at.hour - Time.now.hour %> hours ago<p>
       <p>votes: <%= vote_count(answer) %> </p>
-
-      <h5>Comments</h5>
+    </div>
+      <h5 class="comment">Comments</h5>
       <div class="comments-block">
         <% answer.comments.each do |comment| %>
           <h6> <%= comment.content %> | posted by <%= comment.user.username %></h6>
@@ -47,12 +48,13 @@
       <div class ="comments_section">
         <button class="comment_button_toggle", type="button">add comment</button>
         <div class ="comments_form">
+          <br>
           <h4><%=render partial: "questions/answer_comment_form", locals: {answer: answer} %></h4>
         </div>
       </div>
     <% end %>
   </ul>
   <%= render partial: "questions/answer", locals: {question: @question, answer: @answer} %>
-</main>
+</div>
 
 

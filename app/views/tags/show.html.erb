@@ -1,8 +1,8 @@
-<main>
-<h1> Questions in <%= @tag.category %> </h1>
-<ul>
-<% @tag.questions.each do |question| %>
-  <li><class="query"><%= link_to question.query, question_path(question) %></li>
-</ul>
-<% end %>
-</main>
+<div class="content">
+<h1 class="tag-list"> Questions in <%= @tag.category %> </h1>
+  <ul class="query">
+  <% @tag.questions.each do |question| %>
+    <li class="query"><%= link_to question.query, question_path(question) %></li>
+  <% end %>
+  </ul>
+</div>

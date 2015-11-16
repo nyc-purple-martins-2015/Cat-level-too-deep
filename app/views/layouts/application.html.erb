@@ -4,6 +4,7 @@
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
+
 </head>
 <body>
 <div class="wrapper">
@@ -21,11 +22,21 @@
     </div>
   </nav>
 </div>
-  <h1><%= link_to image_tag('cat_logo_with_name.gif'), root_path %>
-    <span class="inline-block-span">
-      <%= link_to "New Question", new_question_path %> <%= link_to "Tags", tags_path %>
-    </span>
-  </h1>
+<div class="content">
+  <header>
+    <h1><%= link_to image_tag('cat_logo_with_name.gif'), root_path %></h1>
+    <div class="btns">
+      <div class="btn">
+        <% if logged_in? %>
+          <%= link_to "New Question", new_question_path %>
+      </div>
+        <% end %>
+      <div class="btn">
+        <%= link_to "Tags", tags_path %>
+      </div>
+    </div>
+  </header>
+</div>
   <div class="line"></div>
 <%= yield %>
 </body>

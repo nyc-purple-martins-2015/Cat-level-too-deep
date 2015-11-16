@@ -1,8 +1,19 @@
-<div class="question_summary_display">
-  <h4><a href="<%= question_path(question) %>"><%= question.title %></a></h4>
-  <p><%= question.query %></p>
-  <p>written by: <%= question.author.username %></p>
-  <p>created <%= question.updated_at.hour - Time.now.hour %> hours ago</p>
-  <p>votes: <%= vote_count(question) %></p>
-  <p>answers: <%= question.answers.count %></p>
+<div class="question-details">
+  <%= vote_count(question) %>
+  <br>
+  <span>votes</span>
 </div>
+
+<div class="question-details">
+  <%= question.answers.count %>
+  <br>
+  <span>answers</span>
+</div>
+
+<h3><a href="<%= question_path(question) %>"><%= question.title %></a></h3>
+
+<div class="question-author">
+  <span>asked <%= question.updated_at.hour - Time.now.hour %> hours ago <%= question.author.username %></span>
+</div>
+
+
